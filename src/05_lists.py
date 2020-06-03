@@ -29,4 +29,7 @@ print(x + y)
 print(len(x))
 # Print all the values in x multiplied by 1000
 # YOUR CODE HERE
-print(x[0] * 1000, x[1] * 1000, x[2] * 1000)
+# print(x[0] * 1000, x[1] * 1000, x[2] * 1000)
+for banana in x:
+    bananaTotal = banana * 1000
+    print(bananaTotal)
