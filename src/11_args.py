@@ -36,6 +36,7 @@ print(f2(*a))    # Should print 22
 # YOUR CODE HERE
 def f3(num1, num2=1): 
     return num1 + num2
+
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
 
@@ -50,8 +51,16 @@ print(f3(8))     # Should print 9
 
 # YOUR CODE HERE
 def f4(**kwargs):
-    if kwargs is not None:
-        print(kwargs)
+    #kwargs come through as a dictionary
+    #MY CODE:
+    # if kwargs is not None:
+    #     print(kwargs)
+
+    #can also do:
+    #for key, val in kwargs.items()
+        #print(f'key: {key}, value: {val}')
+    for key in kwargs:
+        print(f'key: {key}, value: {kwargs[key]}')
 
 # Should print
 # key: a, value: 12
