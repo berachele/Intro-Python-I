@@ -31,7 +31,11 @@ import sys
 import calendar
 from datetime import datetime
 
-# print(sys.argv) to conditionally rend a calendar
+#receive user input as argument (we're not going to be using the 'input')
+#because when it starts the program, we already have users input
+#, we are not waiting on it
+
+# print(sys.argv) to conditionally render a calendar
 # print(calendar.month(2020, 6))
 # fail = False
 
@@ -53,5 +57,6 @@ elif len(sys.argv) == 3:
   print(calendar.month(year, month))
 
 else:
-  print("Error")
-  
+  print("usage: cal.py [month] [year]")
+  # '1' is an arbitrary status code, means 'exiting for another reason besides it breaking it'
+  sys.exit(1)
