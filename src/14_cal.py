@@ -30,3 +30,33 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+#receive user input as argument (we're not going to be using the 'input')
+#because when it starts the program, we already have users input
+#, we are not waiting on it
+
+# print(sys.argv) to conditionally render a calendar
+# print(calendar.month(2020, 6))
+# fail = False
+
+if len(sys.argv) == 1:
+  year = datetime.today().year
+  month = datetime.today().month
+  print(calendar.month(year, month))
+
+elif len(sys.argv) == 2:
+  #figure out what the input is (1-12)
+  month = int(sys.argv[1])
+  year = datetime.today().year
+  #print the calendar of that month
+  print(calendar.month(year, month))
+
+elif len(sys.argv) == 3:
+  month = int(sys.argv[1])
+  year = int(sys.argv[2])
+  print(calendar.month(year, month))
+
+else:
+  print("usage: cal.py [month] [year]")
+  # '1' is an arbitrary status code, means 'exiting for another reason besides it breaking it'
+  sys.exit(1)
